@@ -2,10 +2,12 @@ const express = require('express')
 require('dotenv').config()
 const app = express()
 const port = process.env.PORT || 3000
+const routes = require('./routes')
+const users = require('./routes/users')
+const auth = require('./routes/auth')
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
+app.use('/users', users)
+app.use('/auth', auth)
 
 app.listen(port, () => {
     if (process.env.NODE_ENV === 'dev') {
