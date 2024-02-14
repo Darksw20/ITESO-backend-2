@@ -1,6 +1,6 @@
-# Tarea 1 - Estructura CRUD básico
+# Tarea 2 - Creación de Middlewares
 
-El objetivo de esta práctica es desarrollar una API para manejar operaciones CRUD gestionadas por un servicio externo.
+El objetivo de esta práctica es implementar un middleware para validación de roles
 
 Para comenzar, sigue estos pasos:
 
