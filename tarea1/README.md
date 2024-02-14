@@ -30,4 +30,4 @@ Para comenzar, sigue estos pasos:
 
    Esto ejecutará el servidor y estará listo para manejar las solicitudes.
 
-Ahora estás listo para comenzar a desarrollar tu API CRUD utilizando las variables de entorno proporcionadas en el archivo `.env`.
+Ahora estás listo para comenzar a probar la API CRUD utilizando las variables de entorno proporcionadas en el archivo `.env`.

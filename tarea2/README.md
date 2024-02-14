@@ -1,6 +1,6 @@
-# Tarea 1 - Estructura CRUD básico
+# Tarea 2 - Creación de Middlewares
 
-El objetivo de esta práctica es desarrollar una API para manejar operaciones CRUD gestionadas por un servicio externo.
+El objetivo de esta práctica es implementar un middleware para validación de roles
 
 Para comenzar, sigue estos pasos:
 
@@ -30,4 +30,4 @@ Para comenzar, sigue estos pasos:
 
    Esto ejecutará el servidor y estará listo para manejar las solicitudes.
 
-Ahora estás listo para comenzar a desarrollar tu API CRUD utilizando las variables de entorno proporcionadas en el archivo `.env`.
+Ahora estás listo para comenzar a probar la API CRUD utilizando las variables de entorno proporcionadas en el archivo `.env`.

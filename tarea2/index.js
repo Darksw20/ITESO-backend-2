@@ -8,13 +8,14 @@ app.use(bodyParser.json())
 const port = process.env.PORT || 3000
 const host = process.env.HOST || 'localhost'
 
+const { authToken } = require('./middleware/auth')
 const users = require('./routes/users')
 
 app.get('/healthcheck', (req, res) => {
     res.send('Working Fine Pal!')
 })
 
-app.use('/users', users)
+app.use('/users', authToken, users)
 
 app.listen(port, () => {
     if (process.env.NODE_ENV === 'dev') {
