@@ -1,0 +1,22 @@
+{
+  "name": "typescript-test",
+  "version": "1.0.0",
+  "description": "Este repositorio contendrá las actividades, tareas y prácticas para la materia de Backend 2. Para abrir cualquier tarea, por favor ejecuta en la terminal el nombre de la carpeta y sigue el respectivo README.md.",
+  "main": "index.ts",
+  "scripts": {
+    "start": "node dist/.",
+    "local": "ts-node src/index.ts",
+    "build": "rimraf dist && tsc",
+    "dev": "nodemon src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "nodemon": "^3.1.0",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
