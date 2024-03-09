@@ -8,7 +8,7 @@ const service = {
         return new Promise((resolve, reject) => {
 
             const hash = crypto.createHash('sha256').update(password).digest('hex');
-            const user = User.create({
+            User.create({
                 email: email,
                 password: hash
             }).then((response) => {
