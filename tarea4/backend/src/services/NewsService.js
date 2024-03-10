@@ -8,10 +8,12 @@ const service = {
             try {
                 axios.get(`${url}/everything?q=${query}&from=${from}&sortBy=${sort}&apiKey=${key}`)
                     .then((response) => {
+                        const articles = response.data.articles.filter(article => (article.urlToImage !== null && article.title !== null && article.url !== null));
+                        const total = articles.length;
                         resolve({
                             query: query,
-                            total: response.data.totalResults,
-                            news: response.data.articles
+                            total: total,
+                            news: articles
                         });
                     }).catch((error) => {
                         reject({ message: 'Error getting news', error });
