@@ -2,16 +2,17 @@ const NewsService = require('../services/NewsService');
 
 const controller = {
     get: async (req, res) => {
-        const { query } = req.query;
+        let query = req.query?.query;
+        let from = req.query?.from;
+        let sort = req.query?.sort;
         try {
-            if (query) {
-                const response = await NewsService.find(query);
+            if (query && from && sort) {
+                const response = await NewsService.find(query, from, sort);
                 return res.json(response);
             }
-            const response = await NewsService.getAll();
-            res.json(response);
+            return res.status(422).json({ message: 'Missing parameters' });
         } catch (error) {
-            res.status(422).json(error);
+            res.status(500).json(error);
         }
     }
 }
