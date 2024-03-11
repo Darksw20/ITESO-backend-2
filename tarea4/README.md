@@ -4,6 +4,21 @@ El objetivo de esta práctica es desarrollar una aplicación web para listar not
 
 Para comenzar, sigue estos pasos:
 
+Agregar .env.development
+Agregar .env.production
+Instalar nvm
+Instalar version 16.20
+Usar version 16.20
+Run yarn en raiz
+Run yarn en backend folder
+
+On production Mode:
+Run yarn start on raiz
+
+On develop Mode:
+run yarn dev on raiz
+run yarn dev on backend folder
+
 1. **Crear archivo .env**: En la raíz del proyecto, crea un archivo llamado `.env`. En este archivo, define las siguientes variables de entorno:
 
    ```plaintext

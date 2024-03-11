@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, "..", "build")));
 app.use(express.static("public"));
+app.use('/static', express.static('public'));
 app.use('/api', routes);
 
 app.use((req, res, next) => {

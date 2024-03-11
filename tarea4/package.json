@@ -10,6 +10,7 @@
     "cross-env": "^7.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
     "react-scripts": "^3.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -17,7 +18,7 @@
     "start:client": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "start": "yarn build && (cd backend && yarn start)",
+    "start": "rm -rf build && yarn build && (cd backend && yarn start)",
     "dev": "yarn start:client && (cd backend && yarn dev)",
     "eject": "react-scripts eject"
   },
