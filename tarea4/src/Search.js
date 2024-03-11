@@ -18,7 +18,7 @@ const SearchList = ({ news }) => {
                         />
                     </div>
                     <div className='news-data'>
-                        <a href={newsItem.url}>{newsItem.title}</a>
+                        <a href={newsItem.url} target="_blank">{newsItem.title}</a>
                         <p>{newsItem.description}</p>
                     </div>
                 </div>
@@ -30,6 +30,7 @@ const SearchList = ({ news }) => {
 const Search = () => {
     const location = useLocation();
     const navigate = useNavigate();
+
     const params = new URLSearchParams(location.search);
     const queryText = params.get('query');
 
@@ -37,6 +38,8 @@ const Search = () => {
     const [search, setSearch] = useState('');
     const [query] = useState(queryText || ''); // Initialize with query from URL
     const [news, setNews] = useState([]);
+
+
 
     const handleChangeQuery = (newQuery) => {
         params.set('query', newQuery);
@@ -50,6 +53,7 @@ const Search = () => {
 
     const handleSearchClick = async () => {
         setIsLoading(true);
+        const token = localStorage.getItem('token');
         try {
             const response = await axios.get(`${process.env.REACT_APP_BACK_API}/news`, {
                 params: {
@@ -58,7 +62,7 @@ const Search = () => {
                     sort: 'popularity',
                 },
                 headers: {
-                    token: 123456
+                    token: token
                 }
             });
 
@@ -70,6 +74,12 @@ const Search = () => {
             setIsLoading(false);
         }
     };
+
+    useEffect(() => {
+        if (!localStorage.getItem('token')) {
+            navigate('/');
+        }
+    }, []);
 
     useEffect(() => {
         if (query) {
